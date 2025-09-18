@@ -12,39 +12,39 @@ import "./index.css";
 import { useState } from "react";
 
 export const RegistrationForm = () => {
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (e)=>{
+    const {name,value} = e.target;
 
     switch (name) {
       case "firstName":
         setFirstName(value);
         break;
-
       case "lastName":
         setLastName(value);
         break;
-
       case "email":
         setEmail(value);
         break;
-
       case "password":
         setPassword(value);
         break;
-
       case "phone":
         setPhoneNumber(value);
+        break;
+      default:
+
         break;
     }
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event)=>{
     event.preventDefault();
     const formData = {
       firstName,
@@ -53,10 +53,12 @@ export const RegistrationForm = () => {
       password,
       phoneNumber,
     };
-
     console.log(formData);
-  };
 
+  }
+
+
+ 
   return (
     <>
       <form onSubmit={handleFormSubmit}>
@@ -86,6 +88,7 @@ export const RegistrationForm = () => {
             required
             value={lastName}
             onChange={handleInputChange}
+
           />
 
           <label htmlFor="email">
@@ -98,6 +101,7 @@ export const RegistrationForm = () => {
             required
             value={email}
             onChange={handleInputChange}
+
           />
 
           <label htmlFor="password">
@@ -110,6 +114,7 @@ export const RegistrationForm = () => {
             required
             value={password}
             onChange={handleInputChange}
+
           />
 
           <label htmlFor="phone">
@@ -123,6 +128,7 @@ export const RegistrationForm = () => {
             required
             value={phoneNumber}
             onChange={handleInputChange}
+
           />
 
           <p>

@@ -2,43 +2,46 @@ import "./index.css";
 import { useState } from "react";
 
 export const LoginForm = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [user,setUser] = useState({
+    username: "",
+    password: ""
+  });
+  const handFormChange = (e)=>{
+    const {name , value} = e.target;
+    setUser((prev)=>({...prev,[name]:value}))
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  }
 
-    const loginData = {
-      username,
-      password,
-    };
-
-    console.log(loginData);
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(user)
   };
 
   return (
     <div className="container">
       <div className="card">
-        <h1>Login Form</h1>
+        <h1 style={{color:"black"}}>Login Form</h1>
         <form onSubmit={handleFormSubmit}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
             name="username"
+            placeholder="username"
             required
             autoComplete="off"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={user.username}
+            onChange={handFormChange}
           />
 
           <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
+            placeholder="password"
             required
             autoComplete="off"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={user.password}
+            onChange={handFormChange}
           />
 
           <button type="submit">Login</button>

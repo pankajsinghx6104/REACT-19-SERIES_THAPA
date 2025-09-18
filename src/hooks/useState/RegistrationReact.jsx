@@ -18,13 +18,16 @@ export const RegistrationFormReact = () => {
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prev) => ({ ...prev, [name]: value }));
+    const {name , value} = e.target;
+
+    setUser((prev)=>({
+      ...prev,[name]:value
+    }));
   };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(user);
+    console.log(user)
   };
 
   return (

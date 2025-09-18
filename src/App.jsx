@@ -1,10 +1,8 @@
-
-import { RegistrationForm } from "./hooks/useState/Registration";
-
+import { ContactForm } from "./hooks/useState/ContactFrom";
 export const App = () => {
   return (
     <>
-      <RegistrationForm />
+      <ContactForm />
     </>
   );
 };
