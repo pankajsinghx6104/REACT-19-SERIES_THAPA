@@ -1,8 +1,8 @@
-import { ContactForm } from "./hooks/useState/ContactFrom";
+import { ReactUseEffect } from "./hooks/useEffect";
 export const App = () => {
   return (
     <>
-      <ContactForm />
+      <ReactUseEffect />
     </>
   );
 };
