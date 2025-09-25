@@ -1,8 +1,8 @@
-import { ReactUseEffect } from "./hooks/useEffect";
+import { CleanUp } from "./hooks/useEffect/CleanUp";
 export const App = () => {
   return (
     <>
-      <ReactUseEffect />
+      <CleanUp />
     </>
   );
 };
